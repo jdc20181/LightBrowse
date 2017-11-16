@@ -1,4 +1,8 @@
 # LightBrowse
+
+*COMING SOON WINTER 2017*
+
+
 A Sub Project to BeffsBrowser, a Browser without extras. 
 
 With LightBrowse, a lot of features of BB is excluded, this browser is for those who wish to browse freely, but don't want the extra features of BeffsBrowser.
