@@ -45,3 +45,14 @@ the app becomes bigger, which isn't the concept of the product.
 Minimum OS: Light Browse is starting with a Newer framework meaning compatibility to Windows 7 is limited, so I have decided not to support Windows 7 and older OS versions
 
 StartPage: A New version of Startpage called LightPage, will work similar to Startpage without custom sites. You will have several quick sites to choose from. 
+
+
+
+
+**Dependents**
+
+*BeffsBrowser TabControl* - Comes from the BeffsBrowser Respo
+
+*Gecko* - Powerful under the hood component of the mechanics of browsing.
+
+
