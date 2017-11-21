@@ -1,5 +1,11 @@
 # LightBrowse
 
+**TimeLine:**
+
+Can be seen [here](https://github.com/jdc20181/LightBrowse/wiki/Beta-Period-Releases---After-Beta-Releases)
+
+
+
 *COMING SOON WINTER 2017*
 
 
