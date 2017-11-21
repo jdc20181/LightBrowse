@@ -6,7 +6,12 @@ Can be seen [here](https://github.com/jdc20181/LightBrowse/wiki/Beta-Period-Rele
 
 
 
-*COMING SOON WINTER 2017*
+
+___________________________________________________________________
+
+
+*Version 0.1 Coming December '17*
+
 
 
 A Sub Project to BeffsBrowser, a Browser without extras. 
