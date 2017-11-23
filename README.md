@@ -1,6 +1,14 @@
 # LightBrowse
 
-**TimeLine:**
+**Announcments**
+
+**First Release**
+
+Version 0.1, should be released by tomorrow evening (11/23/17) and no later than hopefully December 1st. 
+
+
+
+**Project Outline/Planning**
 
 Can be seen [here](https://github.com/jdc20181/LightBrowse/wiki/Beta-Period-Releases---After-Beta-Releases)
 
@@ -10,7 +18,7 @@ Can be seen [here](https://github.com/jdc20181/LightBrowse/wiki/Beta-Period-Rele
 ___________________________________________________________________
 
 
-*Version 0.1 Coming December '17*
+**About**
 
 
 
