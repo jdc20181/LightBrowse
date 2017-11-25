@@ -4,8 +4,7 @@
 
 **First Release**
 
-Version 0.1, should be released by tomorrow evening (11/23/17) and no later than hopefully December 1st. 
-
+Version 0.1 is delayed, and will be out soon!
 
 
 **Project Outline/Planning**
