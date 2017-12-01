@@ -2,9 +2,9 @@
 
 **Announcments**
 
-**First Release**
+**Version 0.1 released!**
 
-Version 0.1 is delayed, and will be out soon!
+Version 0.1, of LightBrowse has been released!
 
 
 **Project Outline/Planning**
