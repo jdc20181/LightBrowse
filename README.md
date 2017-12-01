@@ -2,6 +2,10 @@
 
 **Announcments**
 
+**Version 0.2 Planned**
+
+[Read Wiki](https://github.com/jdc20181/LightBrowse/wiki/Version-0.2)
+
 **Version 0.1 released!**
 
 Version 0.1, of LightBrowse has been released!
