@@ -4,6 +4,14 @@
 
 **Version 0.2 Planned**
 
+- New Features
+  - Settings
+  - Development of Lightpage has began, you will have access to the Lightpage, but it will be non-functioning much of V 0.2, and will be released in V. 0.3, along with Favorites (hopefully), the lightpage will be quick links, and the favorites page will be where your favorite sites are loaded. 
+
+- Many Fixes and improvements
+
+
+
 [Read Wiki](https://github.com/jdc20181/LightBrowse/wiki/Version-0.2)
 
 **Version 0.1 released!**
