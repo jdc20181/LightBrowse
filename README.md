@@ -2,9 +2,14 @@
 
 **Announcments**
 
-**Version 0.2 Planned**
 
-Release Date: Next Week
+**Version 0.3 will be ready in 1-3 weeks!**
+
+As stated previously the first several releases will be very frequent, and also may inclue a different version e.g. V 0.2.1 where the 1 is the build, due to issues before deployment, testing is ALWAYS done before deployment!
+
+**Version 0.2 has been released!**
+
+
 
 
 - New Features
