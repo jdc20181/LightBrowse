@@ -93,4 +93,7 @@ StartPage: A New version of Startpage called LightPage, will work similar to Sta
 
 *Gecko* - Powerful under the hood component of the mechanics of browsing.
 
+**License**
+
+Licensed under the MIT license, you must aknowledge the license and read through it after you install and first launch LightBrowse, by using lightbrowse you aknowledge the license, if you do not agree to the terms, do not use LightBrowse. 
 
