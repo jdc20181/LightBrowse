@@ -2,6 +2,10 @@
 
 **Announcments**
 
+**LightPage is being discontinued**
+
+[wiki](https://github.com/jdc20181/LightBrowse/wiki/LightPage:-Discontinued)
+
 **Version 0.4 Release Date 1-2 weeks (Between holidays)**
 
 Get ready for lightfavs!
