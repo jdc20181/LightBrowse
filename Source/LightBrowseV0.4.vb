@@ -48,9 +48,14 @@ Public Class LightBrowseMain
         Me.Cursor = Cursors.Default
         ToolStripTextBox1.Text = CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString
 
-        Save_History()
 
-        LightPage()
+        If My.Settings.SafeBrowsing = "True" Then
+
+
+        ElseIf My.Settings.SafeBrowsing = "False" Then
+            Save_History()
+        End If
+
 
     End Sub
 #End Region
@@ -65,7 +70,7 @@ Public Class LightBrowseMain
             int = int + 1
 
             CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(ToolStripTextBox1.Text)
-
+           
 
 
         ElseIf CheckURL(ToolStripTextBox1.Text) = False Then
@@ -113,6 +118,7 @@ Public Class LightBrowseMain
             AddHandler brws.ProgressChanged, AddressOf Loading
             AddHandler brws.DocumentCompleted, AddressOf Done
 
+            'Test line below
 
         Catch ex As Exception
         End Try
@@ -184,7 +190,18 @@ Public Class LightBrowseMain
         ToolStripDropDownButton2.Alignment =
             System.Windows.Forms.ToolStripItemAlignment.Right
         LoadUpSettings()
-   
+        If My.Settings.LicenseAknowledge = "True" Then
+        ElseIf My.Settings.LicenseAknowledge = "False" Then
+            LicenseAknowledge.Show()
+        End If
+
+
+        If My.Settings.SafeBrowsing = "True" Then
+            SafeBrowsingToolStripMenuItem.Checked = True
+        ElseIf My.Settings.SafeBrowsing = "False" Then
+            SafeBrowsingToolStripMenuItem.Checked = False
+
+        End If
 
     End Sub
     Public Sub MakeFullScreen()
@@ -221,19 +238,7 @@ Public Class LightBrowseMain
         file.Close()
     End Sub
 
-    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
-        Dim tab As New TabPage
-        Dim brws As New GeckoWebBrowser
-        brws.Dock = DockStyle.Fill
-        tab.Text = " New Tab"
-        tab.Controls.Add(brws)
-        Me.TabControl1.TabPages.Add(tab)
-        Me.TabControl1.SelectedTab = tab
-        brws.Navigate("http://bbstart.tk/lightpage/")
-        AddHandler brws.ProgressChanged, AddressOf Loading
-        AddHandler brws.DocumentCompleted, AddressOf Done
-        int = int + 1
-    End Sub
+
 
     Private Sub ToolStripButton7_Click(sender As Object, e As EventArgs) Handles ToolStripButton7.Click
         Dim tab As New TabPage
@@ -305,33 +310,39 @@ Public Class LightBrowseMain
     End Sub
 
 
-'LightPage is in Testing phase and is not released, the following code is for demostration purposes only and is not entirely in functioning capacity
-    Public Sub LightPage()
-        If CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url = New Uri("http://bbstart.tk/lightpage") Then
-            Dim nameIndex, urlIndex As Integer
-            'My.Settings.StartPageName1, My.Settings.StartPageName2, My.Settings.StartPageName3, My.Settings.StartPageName4, My.Settings.StartPageName5, My.Settings.StartPageName6, My.Settings.StartPageName7, My.Settings.StartPageName8, My.Settings.StartPageName9, My.Settings.StartPageName10
-            'My.Settings.StartPage1, My.Settings.StartPage2, My.Settings.StartPage3, My.Settings.StartPage4, My.Settings.StartPage5, My.Settings.StartPage6, My.Settings.StartPage7, My.Settings.StartPage8, My.Settings.StartPage9, My.Settings.StartPage10
-            Dim names() As String = {"Google"}
-            Dim urls() As String = {"https://google.com"}
-            Dim wb As GeckoWebBrowser = CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser)
 
-            Dim siteNodes = wb.Document.GetElementsByClassName("url")
-            For Each n As GeckoHtmlElement In siteNodes
-                'n.TextContent = "Site"
-                n.TextContent = names(nameIndex)
-                nameIndex += 1
-            Next
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+        Updates.Show()
 
-            Dim urlNodes = wb.Document.GetElementsByClassName("url")
-            For Each n As GeckoHtmlElement In urlNodes
-                n.TextContent = urls(urlIndex)
-                n.SetAttribute("href", urls(urlIndex))
-                urlIndex += 1
-            Next
+    End Sub
+
+    Private Sub SafeBrowsingToolStripMenuItem_CheckedChanged(sender As Object, e As EventArgs) Handles SafeBrowsingToolStripMenuItem.CheckedChanged
+        If SafeBrowsingToolStripMenuItem.Checked = True Then
+            My.Settings.SafeBrowsing = "True"
+        ElseIf SafeBrowsingToolStripMenuItem.Checked = False Then
+            My.Settings.SafeBrowsing = "False"
+
+        End If
+    End Sub
+
+    Private Sub LightBrowseMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim shouldWarn = (My.Settings.TabCloseWarning = "Yes")
+        Dim hasTabs = (TabControl1.TabCount >= 2)
+
+        If shouldWarn AndAlso hasTabs Then
+            Dim shouldCloseResult = MessageBox.Show("You have 2 or more tabs open. Are you sure you wanna exit?" & vbNewLine & "A Total of" & " " & TabControl1.TabCount & " " & "Tabs will be closed", "Closing Multi-Tabbed Window", MessageBoxButtons.YesNo)
+
+            If shouldCloseResult = DialogResult.No Then
+                e.Cancel = True
+            End If
         End If
     End Sub
 
 
 
+
+
+
 #End Region
 End Class
+
