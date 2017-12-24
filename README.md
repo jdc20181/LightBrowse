@@ -2,13 +2,13 @@
 
 **Announcments**
 
+**Version 0.4**
+
+Will be released sometime after christmas, will include stability improvements, and include Safe-Browsing, as well as enhancments to the UI
+
 **LightPage is being discontinued**
 
 [wiki](https://github.com/jdc20181/LightBrowse/wiki/LightPage:-Discontinued)
-
-**Version 0.4 Release Date 1-2 weeks (Between holidays)**
-
-Get ready for lightfavs!
 
 
 **Version 0.3 Released**
