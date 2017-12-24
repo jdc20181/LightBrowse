@@ -75,7 +75,7 @@ Features Comparison Chart:
 |                   Settings                  |   Limited^  |            Yes            |
 |                Easy to Update               |     Yes     |            Yes            |
 |                    Min OS^             |  Windows 8  | Windows 7, Service Pack 1 |
-|                  StartPage                  |  LightPage^ |            Yes            |
+|                  StartPage                  |  No |            Yes            |
 |                   License                   |     MIT     |            MIT            |
 |                                             |             |                           |
 
