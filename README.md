@@ -2,37 +2,9 @@
 
 **Announcments**
 
-**Version 0.4**
+**Version 0.4 Released**
 
-Will be released sometime after christmas, will include stability improvements, and include Safe-Browsing, as well as enhancments to the UI
-
-**LightPage is being discontinued**
-
-[wiki](https://github.com/jdc20181/LightBrowse/wiki/LightPage:-Discontinued)
-
-
-**Version 0.3 Released**
-
-Update is ready!
-
-**Version 0.2 has been released!**
-
-
-
-
-- New Features
-  - Settings
-  - Development of Lightpage has began, you will have access to the Lightpage, but it will be non-functioning much of V 0.2, and will be released in V. 0.3, along with Favorites (hopefully), the lightpage will be quick links, and the favorites page will be where your favorite sites are loaded. 
-
-- Many Fixes and improvements
-
-
-
-[Read Wiki](https://github.com/jdc20181/LightBrowse/wiki/Version-0.2)
-
-**Version 0.1 released!**
-
-Version 0.1, of LightBrowse has been released!
+Version 0.4 brought some new features and improvements to LightBrowse. 
 
 
 **Project Outline/Planning**
@@ -90,7 +62,6 @@ the app becomes bigger, which isn't the concept of the product.
 
 Minimum OS: Light Browse is starting with a Newer framework meaning compatibility to Windows 7 is limited, so I have decided not to support Windows 7 and older OS versions
 
-StartPage: A New version of Startpage called LightPage, will work similar to Startpage without custom sites. You will have several quick sites to choose from. 
 
 
 
