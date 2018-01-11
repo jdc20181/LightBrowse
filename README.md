@@ -2,6 +2,12 @@
 
 **Announcments**
 
+**Version 0.5 Released!**
+
+Version 0.5 has been released, expect V. 0.6 to be packed with new stuff and improvements, and add-ins from the previous release. 
+
+
+
 **Version 0.4 Released**
 
 Version 0.4 brought some new features and improvements to LightBrowse. 
