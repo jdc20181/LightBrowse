@@ -55,6 +55,7 @@ Public Class LightBrowseMain
         ElseIf My.Settings.SafeBrowsing = "False" Then
             Save_History()
         End If
+     
 
 
     End Sub
@@ -70,7 +71,7 @@ Public Class LightBrowseMain
             int = int + 1
 
             CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Navigate(ToolStripTextBox1.Text)
-           
+            '   RestoreSave()
 
 
         ElseIf CheckURL(ToolStripTextBox1.Text) = False Then
@@ -191,6 +192,7 @@ Public Class LightBrowseMain
             System.Windows.Forms.ToolStripItemAlignment.Right
         LoadUpSettings()
         If My.Settings.LicenseAknowledge = "True" Then
+            'Load up normally
         ElseIf My.Settings.LicenseAknowledge = "False" Then
             LicenseAknowledge.Show()
         End If
@@ -202,6 +204,7 @@ Public Class LightBrowseMain
             SafeBrowsingToolStripMenuItem.Checked = False
 
         End If
+        ToolStripTextBox1.Control.ContextMenuStrip = ContextMenuStrip1
 
     End Sub
     Public Sub MakeFullScreen()
@@ -297,13 +300,6 @@ Public Class LightBrowseMain
 
     End Sub
 
-
-
-    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
-        'My.Settings.Reset()
-
-    End Sub
-
     Private Sub LicenseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LicenseToolStripMenuItem.Click
         LicenseViewer.Show()
 
@@ -337,6 +333,147 @@ Public Class LightBrowseMain
             End If
         End If
     End Sub
+
+    Private Sub ToolStripButton8_Click(sender As Object, e As EventArgs) Handles ToolStripButton8.Click
+
+    End Sub
+
+    Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FullScreenToolStripMenuItem.Click
+        Fullscreen.PerformClick()
+    End Sub
+
+    Private Sub ExitFullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitFullScreenToolStripMenuItem.Click
+        ExitFullScreen.PerformClick()
+
+    End Sub
+
+    Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
+        ToolStripButton9.PerformClick()
+
+    End Sub
+
+    Private Sub ForwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ForwardToolStripMenuItem.Click
+        ToolStripButton11.PerformClick()
+
+    End Sub
+
+    Private Sub NewTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewTabToolStripMenuItem.Click
+        ToolStripButton10.PerformClick()
+
+    End Sub
+
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+        ToolStripButton1.PerformClick()
+
+    End Sub
+
+  
+
+    Private Sub TabControl1_ControlAdded(sender As Object, e As ControlEventArgs) Handles TabControl1.ControlAdded
+        If TabControl1.TabCount <= 50 Then
+            ToolStripLabel1.ForeColor = Color.ForestGreen
+        ElseIf TabControl1.TabCount >= 50 Then
+            ToolStripLabel1.ForeColor = Color.Gold
+        ElseIf TabControl1.TabCount <= 250 Then
+            ToolStripLabel1.ForeColor = Color.Red
+        ElseIf TabControl1.TabCount >= 349 Then
+            ToolStripLabel1.ForeColor = Color.Red
+            ToolStripButton10.Enabled = False
+            ToolStripButton10.Visible = False
+
+        End If
+        ToolStripLabel1.Text = TabControl1.TabCount & " " & "Tab(s) Opened"
+
+    End Sub
+
+    Private Sub TabControl1_ControlRemoved(sender As Object, e As ControlEventArgs) Handles TabControl1.ControlRemoved
+        ToolStripLabel1.Text = TabControl1.TabCount - 1 & " " & "Tab(s) Opened"
+        If TabControl1.TabCount <= 50 Then
+            ToolStripLabel1.ForeColor = Color.ForestGreen
+        ElseIf TabControl1.TabCount >= 50 Then
+            ToolStripLabel1.ForeColor = Color.Gold
+        ElseIf TabControl1.TabCount <= 348 Then
+            ToolStripLabel1.ForeColor = Color.Red
+        ElseIf TabControl1.TabCount >= 349 Then
+            ToolStripLabel1.ForeColor = Color.Red
+            ToolStripButton10.Visible = False
+
+        End If
+    End Sub
+
+    Private Sub ToolStripTextBox1_MouseHover(sender As Object, e As EventArgs) Handles ToolStripTextBox1.MouseHover
+
+        ToolStripTextBox1.TextBox.Width = 700
+    End Sub
+
+    Private Sub ToolStripTextBox1_MouseLeave(sender As Object, e As EventArgs) Handles ToolStripTextBox1.MouseLeave
+        ToolStripTextBox1.TextBox.Width = 650
+    End Sub
+
+
+#Region "URL Box shortcuts"
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        My.Computer.Clipboard.Clear()
+        If ToolStripTextBox1.SelectionLength > 0 Then
+            My.Computer.Clipboard.SetText(ToolStripTextBox1.SelectedText)
+
+        Else
+
+
+        End If
+    End Sub
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+        My.Computer.Clipboard.Clear()
+     
+        ToolStripTextBox1.SelectedText = ""
+    End Sub
+
+    Private Sub PasteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteToolStripMenuItem.Click
+        If My.Computer.Clipboard.ContainsText Then
+            ToolStripTextBox1.Paste()
+        End If
+    End Sub
+
+    Private Sub PasteAndGoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteAndGoToolStripMenuItem.Click
+        If My.Computer.Clipboard.ContainsText Then
+            ToolStripTextBox1.Paste()
+            Dim s As String = ToolStripTextBox1.Text
+            Dim fHasSpace As Boolean = s.Contains(" ")
+
+            If fHasSpace = True Then
+                search()
+            ElseIf fHasSpace = False Then
+                UrlNavigate()
+
+            End If
+        End If
+    End Sub
+
+
+
+    Private Sub SelectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectAllToolStripMenuItem.Click
+        ToolStripTextBox1.SelectAll()
+
+    End Sub
+
+    Private Sub ZoomInToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ZoomInToolStripMenuItem.Click
+        CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).GetDocShellAttribute.GetContentViewerAttribute.SetFullZoomAttribute(CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).GetDocShellAttribute.GetContentViewerAttribute.GetFullZoomAttribute + CSng(0.1))
+
+    End Sub
+
+    Private Sub ZoomOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ZoomOutToolStripMenuItem.Click
+        CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).GetDocShellAttribute.GetContentViewerAttribute.SetFullZoomAttribute(CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).GetDocShellAttribute.GetContentViewerAttribute.GetFullZoomAttribute - CSng(0.1))
+
+    End Sub
+
+    Private Sub ResetZoomToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetZoomToolStripMenuItem.Click
+        CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).GetDocShellAttribute.GetContentViewerAttribute.SetFullZoomAttribute(1)
+
+    End Sub
+
+ 
+#End Region
 
 
 
