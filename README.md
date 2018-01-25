@@ -2,6 +2,11 @@
 
 **Announcments**
 
+**Source Code Update**
+
+Source code part of the V.0.5 release was added, and some of the code is non-production code that was just added recently and is part of a later release. Be advised that some of the code is unstable and could cause unexpected results. 
+
+
 **Version 0.5 Released!**
 
 Version 0.5 has been released, expect V. 0.6 to be packed with new stuff and improvements, and add-ins from the previous release. 
