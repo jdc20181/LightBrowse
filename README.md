@@ -2,20 +2,15 @@
 
 **Announcments**
 
+**Version 0.6 Release**
+
+Many fixes, new features and more! See what is all included [here](https://github.com/jdc20181/LightBrowse/wiki/Version-0.6)
+
 **Source Code Update**
 
 Source code part of the V.0.5 release was added, and some of the code is non-production code that was just added recently and is part of a later release. Be advised that some of the code is unstable and could cause unexpected results. 
 
 
-**Version 0.5 Released!**
-
-Version 0.5 has been released, expect V. 0.6 to be packed with new stuff and improvements, and add-ins from the previous release. 
-
-
-
-**Version 0.4 Released**
-
-Version 0.4 brought some new features and improvements to LightBrowse. 
 
 
 **Project Outline/Planning**
