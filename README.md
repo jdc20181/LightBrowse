@@ -1,6 +1,18 @@
 # LightBrowse
 
-**Announcments**
+**Announcements**
+
+**Version 0.7 Release**
+
+Final stages of development of V. 0.7 is being wrapped up, hopefully a release for V 0.7 will be by Saturday. 
+
+
+
+
+
+
+
+
 
 **Version 0.6 Release**
 
