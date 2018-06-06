@@ -4,7 +4,9 @@
 
 **Version 0.7 Release**
 
-Final stages of development of V. 0.7 is being wrapped up, hopefully a release for V 0.7 will be by Saturday. 
+Final stages of development of V. 0.7 is being wrapped up, hopefully a release for V 0.7 will be by mid-june.
+
+Development delays will push the release date back about a week, to mid june. Currently the biggest obstacle is making sure the performance of the updating system is exceptionally well. 
 
 
 
