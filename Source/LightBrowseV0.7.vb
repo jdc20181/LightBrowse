@@ -205,7 +205,14 @@ Public Class LightBrowseMain
     End Sub
 
     Private Sub LightBrowseMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    If My.Settings.SafeBrowsing = "True" Then
+            ToolStripStatusLabel2.Text = "Safe-Mode: Enabled"
+            ToolStripStatusLabel2.ForeColor = Color.Green
+        ElseIf My.Settings.SafeBrowsing = "False" Then
+            ToolStripStatusLabel2.Text = "Safe-Mode: Disabled"
+            ToolStripStatusLabel2.ForeColor = Color.Red
 
+        End If
         ToolStripDropDownButton2.Alignment =
             System.Windows.Forms.ToolStripItemAlignment.Right
         LoadUpSettings()
@@ -314,7 +321,9 @@ Public Class LightBrowseMain
     End Sub
 
     Private Sub UpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdatesToolStripMenuItem.Click
-        Updates.Show()
+           Dim proc As New System.Diagnostics.Process()
+ 
+        proc = Process.Start("C:\Program Files (x86)\BeffsBrowser\LightBrowse Beta\updater.exe", "")
 
     End Sub
 
@@ -331,11 +340,14 @@ Public Class LightBrowseMain
     End Sub
 
     Private Sub SafeBrowsingToolStripMenuItem_CheckedChanged(sender As Object, e As EventArgs) Handles SafeBrowsingToolStripMenuItem.CheckedChanged
-        If SafeBrowsingToolStripMenuItem.Checked = True Then
+       If SafeBrowsingToolStripMenuItem.Checked = True Then
             My.Settings.SafeBrowsing = "True"
+            ToolStripStatusLabel2.Text = "Safe-Mode: Enabled"
+            ToolStripStatusLabel2.ForeColor = Color.ForestGreen
         ElseIf SafeBrowsingToolStripMenuItem.Checked = False Then
             My.Settings.SafeBrowsing = "False"
-
+            ToolStripStatusLabel2.Text = "Safe-Mode: Disabled"
+            ToolStripStatusLabel2.ForeColor = Color.Red
         End If
     End Sub
 
