@@ -31,11 +31,19 @@ Public Class LightBrowseMain
 #Region "Browsing Declarations"
     Dim int As Integer = 0
 
-
-    Private Sub Loading(ByVal sender As Object, ByVal e As Gecko.GeckoProgressEventArgs)
+  Private Sub Loading(ByVal sender As Object, ByVal e As Gecko.GeckoProgressEventArgs)
         TabControl1.SelectedTab.Text = CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).DocumentTitle
         If TabControl1.SelectedTab.Text = Nothing Then
             TabControl1.SelectedTab.Text = CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString
+
+        End If
+        If CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString.StartsWith("https://") Then
+            ToolStripLabel3.ForeColor = Color.ForestGreen
+            ToolStripLabel3.Text = "Secure Connection"
+
+        ElseIf CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString.StartsWith("http://") Then
+            ToolStripLabel3.ForeColor = Color.Red
+            ToolStripLabel3.Text = "Insecure Connection"
         End If
         ToolStripProgressBar1.Maximum = e.MaximumProgress
         ToolStripProgressBar1.Value = e.MaximumProgress
@@ -45,6 +53,15 @@ Public Class LightBrowseMain
 
     Private Sub Done(ByVal sender As Object, ByVal e As Gecko.Events.GeckoDocumentCompletedEventArgs)
 
+        If CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString.StartsWith("https://") Then
+            ToolStripLabel3.ForeColor = Color.ForestGreen
+            ToolStripLabel3.Text = "Secure Connection"
+
+        ElseIf CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString.StartsWith("http://") Then
+            ToolStripLabel3.ForeColor = Color.Red
+            ToolStripLabel3.Text = "Insecure Connection"
+        End If
+
         Me.Cursor = Cursors.Default
         ToolStripTextBox1.Text = CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString
 
@@ -53,10 +70,11 @@ Public Class LightBrowseMain
 
 
         ElseIf My.Settings.SafeBrowsing = "False" Then
-            Save_History()
+        
+            My.Settings.History2.Add(CType(TabControl1.SelectedTab.Controls.Item(0), GeckoWebBrowser).Url.ToString)
+         
         End If
-     
-
+   
 
     End Sub
 #End Region
