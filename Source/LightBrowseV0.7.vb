@@ -97,7 +97,7 @@ Public Class LightBrowseMain
 
         End If
     End Sub
-    Public Sub search()
+    Public Sub Search()
         Dim brws As New GeckoWebBrowser
         AddHandler brws.ProgressChanged, AddressOf Loading
         AddHandler brws.DocumentCompleted, AddressOf Done
