@@ -3,7 +3,7 @@
 
 'MIT License
 
-'Copyright(c) Jeffrey Crowder (LightBrowse) 2017, BeffsBrowser 2015-2017
+'Copyright(c) Jeffrey Crowder (LightBrowse) 2017-2019, BeffsBrowser 2015-2019
 
 'Permission Is hereby granted, free Of charge, to any person obtaining a copy
 'of this software And associated documentation files (the "Software"), to deal
