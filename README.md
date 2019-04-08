@@ -1,5 +1,5 @@
-# LightBrowse :check:
-
+# LightBrowse 
+:check:
 **Announcements**
 
 **Version 0.7 Release**
